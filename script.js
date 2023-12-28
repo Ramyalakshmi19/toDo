@@ -14,11 +14,15 @@ inputBox.addEventListener("keypress",event=>
 })
 function appendTask()
 {
+    let taskDiv=document.createElement('div');
+    let checkNode=document.createElement('input');
+    checkNode.type="checkbox";
+    taskDiv.appendChild(checkNode);
+
     let node=document.createElement('li');
-    let checkBox=createElement('input');
-    checkBox.type="checkbox";
-    node.append(checkBox);
     let text=document.createTextNode(task[taskCount]);
     node.appendChild(text);
-    document.getElementById('taskList').appendChild(node);
+    taskDiv.appendChild(node);
+    
+    document.getElementById('taskList').appendChild(taskDiv);
 }
